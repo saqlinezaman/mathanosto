@@ -6,6 +6,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
+
+
 Route::get('/',[FrontendController::class , 'index']);
 
 Auth::routes();
@@ -18,4 +20,10 @@ Route::get('/profile', [ProfileController:: class, 'index'])->name('profile.inde
 // profile name update 💕
 
 Route::post('/profile/username/update', [ProfileController:: class, 'name_update'])->name('profile.username');
+
+
+// profile email update😒😒
+
+Route::post('/profile/email/update', [ProfileController:: class, 'email_update'])->name('profile.email');
+
 

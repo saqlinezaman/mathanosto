@@ -25,6 +25,8 @@
 
     <link href="{{asset('dashboard')}}/assets/css/icons.min.css" rel="stylesheet" type="text/css">
     <script src="{{asset('dashboard')}}/assets/js/config.js"></script>
+    {{-- tpsstify --}}
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 </head>
 
 <body>
@@ -438,14 +440,8 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-6">
-                        <div><script>document.write(new Date().getFullYear())</script> © Dashtrap</div>
+                        <div><script>document.write(new Date().getFullYear())</script> © Saqline Zaman</div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="d-none d-md-flex gap-4 align-item-center justify-content-md-end">
-                            <p class="mb-0">Design & Develop by <a href="https://myrathemes.com/" target="_blank">MyraStudio</a> </p>
-                        </div>
-                    </div>
-                </div>
             </div>
         </footer>
         <!-- end Footer -->
@@ -476,8 +472,11 @@
 <!-- Dashboard init-->
 <script src="{{asset('dashboard')}}/assets/js/pages/dashboard.js"></script>
 
+{{-- sweet alert --}}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+{{-- tostify --}}
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+@yield('script')
 </body>
-
-
 <!-- Mirrored from myrathemes.com/dashtrap/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 22 Mar 2024 03:40:30 GMT -->
 </html>

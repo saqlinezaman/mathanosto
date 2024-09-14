@@ -23,6 +23,19 @@ class ProfileController extends Controller
         'name'=>$request->name,
         'update_at'=>now(),
     ]);
-    return back();
+    return back()->with('name_update',"Your updated name is $request->name");
    }
+
+//    email
+public function email_update(Request $request){
+     $request->validate([
+        'email'=> 'required|email'
+     ]);
+     user::find(auth()->id())->update([
+        'email'=>$request->email,
+        'updated_at'=>now(),
+     ]);
+     return redirect()->route('profile.index')->with('email_update',"Your updated email is $request->email");
+}
+
 }
