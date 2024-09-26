@@ -27,6 +27,10 @@
     <script src="{{asset('dashboard')}}/assets/js/config.js"></script>
     {{-- tpsstify --}}
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+    {{-- drop zone cdn --}}
+    <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
 </head>
 
 <body>
@@ -350,7 +354,11 @@
 
                         <li class="dropdown">
                             <a class="nav-link dropdown-toggle nav-user me-0 waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                <img src="{{asset('dashboard')}}/assets/images/users/avatar-4.jpg" alt="user-image" class="rounded-circle">
+                                @if (auth()->user()->image=='default.png')
+                                <img src="{{asset('uploads/default')}}/{{auth()->user()->image}}" alt="user-image" class="rounded-circle">
+                                @else
+                                <img src="{{asset('uploads/profile/')}}/{{auth()->user()->image}}" alt="user-image" class="rounded-circle">
+                                @endif
                                 <span class="ms-1 d-none d-md-inline-block">
                                     {{Auth::user()->name}} <i class="mdi mdi-chevron-down"></i>
                                 </span>

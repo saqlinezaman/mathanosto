@@ -14,6 +14,7 @@
         "vite": "^5.0"
     },
     "dependencies": {
+        "dropzone": "^6.0.0-beta.2",
         "sweetalert2": "^11.6.13"
     }
 }
