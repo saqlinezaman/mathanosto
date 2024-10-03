@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
@@ -33,5 +34,9 @@ Route::post('/profile/password/update', [ProfileController:: class, 'password_up
 // image
 
 Route::post('/profile/image/update', [ProfileController:: class, 'image_update'])->name('profile.image');
+
+// category
+
+Route::get('/category',[CategoryController:: class, 'index'])->name('category.index');
 
 
